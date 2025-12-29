@@ -14,6 +14,7 @@ use App\Http\Controllers\ApiTesterController;
 use App\Http\Controllers\ZipMakerController;
 use App\Http\Controllers\GrammarController;
 use App\Http\Controllers\MetaController;
+use App\Http\Controllers\UrlExpanderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -72,3 +73,6 @@ Route::post('/api/grammar/correct', [GrammarController::class, 'correct'])->name
 
 Route::get('/meta-generate', [MetaController::class, 'index'])->name('meta-generate.index');
 Route::post('/api/meta-generate', [MetaController::class, 'generate']);
+
+Route::get('/expand-url', [UrlExpanderController::class, 'index'])->name('expand-url.index');
+Route::post('/expand-url', [UrlExpanderController::class, 'expandUrl'])->name('expand-url.expand');
